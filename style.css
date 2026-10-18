@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: none;
+	list-style: none;
+	text-decoration: none;
+	font-family: 'Roboto', sans-serif;
+}
+
+body{
+	background: #ffffff;
+	font-size: 14px;
+}
+
+.wrapper .header{
+	max-width: 350px;
+	width: 100%;
+	height: auto;
+	margin: 30px auto;
+}
+
+.wrapper .header .top,
+.wrapper .signup{
+	background: #fff;
+    border: 1px solid #dbdbdb;
+    border-radius: 1px;
+    padding: 40px 40px 20px;
+}
+
+.wrapper .header .logo img{
+	display: block;
+	margin: 0 auto 30px;
+}
+
+.wrapper .header .form .input_field{
+	margin-bottom: 6px;
+}
+
+.wrapper .header .form .input_field .input{
+	width: 100%;
+	background: #fafafa;
+	border: 1px solid #dbdbdb;
+	font-size: 12px;
+	border-radius: 3px;
+	color: #262626;
+	padding: 9px 0 7px 8px;
+}
+
+.wrapper .header .form .input_field .input:focus{
+	border: 1px solid #a8a8a8;
+}
+
+.wrapper .header .form .btn{
+	margin: 14px 0;
+	background-color: #0095f6;
+    border: 1px solid #0095f6;
+    border-radius: 8px;
+    text-align: center;
+    padding: 7px;
+}
+
+.wrapper .header .form .btn a{
+	color: #fff;
+	display: block;
+	font-weight: 600;
+	font-size: 14px;
+}
+
+.wrapper .header .or{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 15px;
+	margin: 18px 0 18px;
+}
+
+.wrapper .header .or .line{
+	width: 105px;
+	height: 1px;
+	background: #dbdbdb;
+}
+
+.wrapper .header .or p{
+	color: #737373;
+	font-size: 13px;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+.wrapper .dif .fb{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.wrapper .dif .fb img{
+	width: 16px;
+	height: 16px;
+}
+
+.wrapper .dif  .fb p{
+	color: #385185;
+	font-weight: 600;
+	font-size: 14px;
+	margin-left: 8px;
+}
+
+.wrapper .dif .forgot{
+	font-size: 12px;
+	text-align: center;
+	margin-top: 18px;
+}
+
+.wrapper .dif .forgot a{
+	color: #00376b;
+}
+
+.wrapper .signup{
+	margin: 10px 0 20px;
+	padding: 20px 40px;
+	text-align: center;
+	color: #262626;
+	border: 1px solid #dbdbdb;
+}
+
+.wrapper .signup a{
+	color: #0095f6;
+	font-weight: 600;
+}
+
+.wrapper .apps{
+	text-align: center;
+	color: #262626;
+}
+
+.wrapper .apps p{
+	margin-bottom: 20px;
+	font-size: 14px;
+}
+
+.wrapper .apps a img{
+	width: 135px;
+	height: 40px;
+	margin: 0 4px;
+}
+
+.footer{
+	max-width: 935px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 40px 0;
+	display: flex;
+	justify-content: space-between;
+}
+
+.footer .links ul li{
+	display: inline-block;
+	margin-right: 15px;
+}
+
+.footer .links ul li a{
+	color: #737373;
+	font-size: 12px;
+}
+
+.footer .copyright{
+	color: #737373;
+	font-size: 12px;
+}
